@@ -1,0 +1,58 @@
+<div  class="container">
+<div  class="row">
+    <div  class="col-md-2">
+      <label>Search Product</label>&nbsp;
+    </div>
+    <div class="col-md-2">
+        <input  class="form-control" type="text" [(ngModel)]= "productName"  placeholder="product"/>
+    </div>
+    <div class="col-md-1">
+        <i class="fa fa-search fa-2x" aria-hidden="true" (click) = "Search(productName)"></i>
+    </div>
+</div>
+&nbsp;
+<div  *ngIf = "showTable">
+  <h4><b>Search Result</b></h4>
+<table class="table table-striped" >
+
+  <tr>
+    <th>Id</th>
+    <th>Product Name</th>
+    <th>Product Type</th>
+    <th>Action</th>
+  </tr>
+  <tr  *ngFor="let product of productResult">
+    <td>{{product.Id}}</td>
+    <td>{{product.productName}}</td>
+    <td>{{product.producttype}}</td>
+    <td><span><i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:green" (click) = "addProduct(product.Id)" ></i></span></td>
+
+  </tr>
+
+
+</table>
+</div>
+<div *ngIf="errorFlag">
+<h4><b>No Result Found!</b></h4>
+</div>
+
+<h4><b>Selected Product List </b></h4>
+<table class="table table-striped" >
+
+    <tr>
+      <th>Id</th>
+      <th>Product Name</th>
+      <th>Product Type</th>
+      <th>Amount</th>
+    </tr>
+    <tr  *ngFor="let product of selectedProduct">
+      <td>{{product.Id}}</td>
+      <td>{{product.productName}}</td>
+      <td>{{product.producttype}}</td>
+      <td></td>
+  
+    </tr>
+  
+  
+  </table>
+</div>

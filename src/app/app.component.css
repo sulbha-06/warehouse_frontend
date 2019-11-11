@@ -1,0 +1,11 @@
+.register_form{
+    background-color: aqua;
+    }
+    
+    .submit_btn{
+        text-align: center;
+        margin: 2% 0% 1% 0%;
+    }
+    .sub_btn{
+        padding: 4px 25px;
+    }

@@ -1,0 +1,21 @@
+/* .img_template{
+    background-color: black;
+    
+    float: left;
+    position: absolute;
+    
+}
+.image_main{
+    width: 50%;
+    
+} */
+
+/* body  {
+    background-image: url("images/Penguins.jpg");
+     background-color: #cccccc; 
+  } */
+  .bg_img {  
+    background-image: url("/../../assets/images/Penguins.jpg");
+    background-repeat: repeat-x;
+    height: 772px;
+}

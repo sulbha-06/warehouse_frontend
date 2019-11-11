@@ -1,0 +1,38 @@
+<div class="login">
+		<form name="form" class="loginBody">
+				<div class="row row_margin">
+						<div *ngIf="successFlag" class="alignment">
+								<p class="text-danger">Bad credential , try again with correct username & password</p>
+							</div>
+						<div class="col-lg-4 col-lg-offset-5">
+						  <label>User Name</label>
+						</div>
+					  </div>
+				<div class="row row_margin">
+				  <div class="col-lg-4 col-lg-offset-4">
+					<input type="text" class="form-control" placeholder="someone@gmail.com" name="uname" [(ngModel)]="uname" maxlength="50" required/>
+				  </div>
+				</div>
+				<div class="row row_margin">
+						<div class="col-lg-4 col-lg-offset-5">
+						  <label>Password</label>
+						</div>
+					  </div>
+				<div class="row row_margin">
+				  <div class="col-lg-4 col-lg-offset-4">
+					<input type="text" class="form-control" placeholder="******" name = "pwrd" [(ngModel)]="pwrd" maxlength="20" required/>
+				  </div>
+				</div>
+				<div class="row row_margin">
+						<div class="col-lg-4 col-lg-offset-5">
+								<button type="button" class="btn btn-success" (click)="loginCheck()"  >Login</button>
+						</div>
+					  </div>
+
+
+
+
+
+				
+	 </form>
+</div>
