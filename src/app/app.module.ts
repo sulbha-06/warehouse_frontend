@@ -15,7 +15,9 @@ import { HighlightDirective } from './highlight.directive';
 import {ButtonComponent} from './commonComponents/button/button.component'
 import { FooterPrimaryComponent } from './commonComponents/footerPrimary/footerPrimary.component';
 import { ProductComponent } from './components/components/product/product.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+//import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -33,14 +35,17 @@ import { ProductComponent } from './components/components/product/product.compon
     LoginComponent,
     HighlightDirective,
     FooterPrimaryComponent,
-    ProductComponent
+    ProductComponent//,
+    //MatToolbarModule
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
