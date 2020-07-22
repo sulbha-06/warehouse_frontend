@@ -1,24 +1,29 @@
-<div  class="container-fluid">
-    <div  class="row">
-      <div class="col">
-        <h3 class="heading">Product Search </h3>
-      </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h3 class="heading">Billing</h3>
+        </div>
     </div>
-<div  class="row">
-    <div class="col-md-2">
-    
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="search Product" [(ngModel)]= "productName">
-      </mat-form-field>
+    <div class="row">
+        <div class="col-md-2">
+            <!-- <mat-form-field class="example-full-width">
+                <input matInput placeholder="search Product" [(ngModel)]="productName">
+            </mat-form-field> -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Search Product</mat-label>
+                <input matInput placeholder="Hardware" value="pipes" [(ngModel)]="productName">
+            </mat-form-field>
+
+
+        </div>
+        <div class="col-md-1">
+            <i class="fa fa-search fa-2x" aria-hidden="true" (click)="Search(productName)"></i>
+        </div>
+
+
     </div>
-      <div class="col-md-1">
-        <i class="fa fa-search fa-2x" aria-hidden="true" (click) = "Search(productName)"></i>
-    </div>
-    
- 
-</div>
-&nbsp;
-<!-- <div  *ngIf = "showTable">
+    &nbsp;
+    <!-- <div  *ngIf = "showTable">
   <h4><b>Search Result</b></h4>
 <table class="table table-striped" >
 
@@ -39,51 +44,50 @@
 
 </table>
 </div> -->
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="productId">
-        <th mat-header-cell *matHeaderCellDef> Product Id </th>
-        <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
-      </ng-container>
-      <ng-container matColumnDef="productName">
-          <th mat-header-cell *matHeaderCellDef> Product Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+    <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="productId">
+            <th mat-header-cell *matHeaderCellDef> Product Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="productName">
+            <th mat-header-cell *matHeaderCellDef> Product Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
         </ng-container>
         <ng-container matColumnDef="producttype">
             <th mat-header-cell *matHeaderCellDef> Product Type </th>
             <td mat-cell *matCellDef="let element"> {{element.producttype}} </td>
-          </ng-container>
-          <ng-container matColumnDef="Amount">
-              <th mat-header-cell *matHeaderCellDef>Amount </th>
-              <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
-            </ng-container>
-            <ng-container matColumnDef="Action">
-                <th mat-header-cell *matHeaderCellDef>Action </th>
-                <td mat-cell *matCellDef="let element"> <i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:green" (click) = "addProduct(product.Id)" ></i> </td>
-              </ng-container>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-<div *ngIf="errorFlag">
-<h4><b>No Result Found!</b></h4>
-</div>
+        </ng-container>
+        <ng-container matColumnDef="Amount">
+            <th mat-header-cell *matHeaderCellDef>Amount </th>
+            <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef>Action </th>
+            <td mat-cell *matCellDef="let element"> <i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:green" (click)="addProduct(product.Id)"></i> </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> -->
+    <div *ngIf="errorFlag">
+        <h4><b>No Result Found!</b></h4>
+    </div>
+    <h4><b>Selected Product List </b></h4>
+    <table class="table table-striped">
 
-<h4><b>Selected Product List </b></h4>
-<table class="table table-striped" >
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Product Type</th>
+            <th>Amount</th>
+        </tr>
+        <tr *ngFor="let product of productdata">
+            <td>{{product.Id}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.producttype}}</td>
+            <td>{{product.Amount| currency:'INR'}}</td>
 
-    <tr>
-      <th>Id</th>
-      <th>Product Name</th>
-      <th>Product Type</th>
-      <th>Amount</th>
-    </tr>
-    <tr  *ngFor="let product of selectedProduct">
-      <td>{{product.Id}}</td>
-      <td>{{product.productName}}</td>
-      <td>{{product.producttype}}</td>
-      <td></td>
-  
-    </tr>
-  
-  
-  </table>
+        </tr>
+
+
+    </table>
 </div>
