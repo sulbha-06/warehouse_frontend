@@ -6,6 +6,7 @@ import { HelpComponent } from '../components/components/help/help.component';
 import { ContactComponent } from '../components/components/contact/contact.component';
 import { LoginComponent } from '../components/components/login/login.component';
 import { ProductComponent } from '../components/components/product/product.component';
+import { BillingComponent } from '../components/components/billing/billing.component';
 const routes: Routes = [
     {
         path: '',
@@ -29,6 +30,10 @@ const routes: Routes = [
     {
       path:'product',
       component: ProductComponent
+    },
+    {
+      path:'billing',
+      component: BillingComponent
     },
     {
       path:'**',

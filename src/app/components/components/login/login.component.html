@@ -1,6 +1,6 @@
 <!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
 <div class="maincontainer">
-    <form name="form" class="main-square example-form">
+    <form name="form" class="example-form main-square ">
         <mat-form-field class="example-full-width">
             <mat-label>User Name</mat-label>
             <input matInput placeholder="abcd@example.com" [(ngModel)]="uname" maxlength="50" required>
@@ -9,7 +9,12 @@
             <mat-label>Password</mat-label>
             <input matInput placeholder="********" [(ngModel)]="uname" [(ngModel)]="pwrd" maxlength="20" required>
         </mat-form-field>
-        <div><button mat-raised-button color="primary" (click)="loginCheck()">Login</button></div>
-
+        <div>
+            <button mat-raised-button color="primary" (click)="loginCheck()">Login</button>&nbsp;
+            <button mat-raised-button color="primary">Sign Up</button>
+        </div>
+        <div>
+            <p>Forgot Password?</p>
+        </div>
     </form>
 </div>

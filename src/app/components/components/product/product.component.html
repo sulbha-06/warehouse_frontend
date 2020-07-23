@@ -1,49 +1,42 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h3 class="heading">Billing</h3>
+            <h3 class="heading">Search Inventory</h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2">
-            <!-- <mat-form-field class="example-full-width">
-                <input matInput placeholder="search Product" [(ngModel)]="productName">
-            </mat-form-field> -->
+        <div class="col-md-4">
             <mat-form-field class="example-full-width">
                 <mat-label>Search Product</mat-label>
-                <input matInput placeholder="Hardware" value="pipes" [(ngModel)]="productName">
+                <span> <input matInput [(ngModel)]="productName" (keydown.enter)="Search(productName)"></span>
+                <span class="search_align"> <i class="fa fa-search fa-lg" aria-hidden="true" (click)="Search(productName)"></i></span>
             </mat-form-field>
-
-
         </div>
-        <div class="col-md-1">
-            <i class="fa fa-search fa-2x" aria-hidden="true" (click)="Search(productName)"></i>
-        </div>
-
-
     </div>
     &nbsp;
-    <!-- <div  *ngIf = "showTable">
-  <h4><b>Search Result</b></h4>
-<table class="table table-striped" >
+    <div *ngIf="showTable">
+        <h4><b>Search Result</b></h4>
+        <table class="table table-striped">
 
-  <tr>
-    <th>Id</th>
-    <th>Product Name</th>
-    <th>Product Type</th>
-    <th>Action</th>
-  </tr>
-  <tr  *ngFor="let product of productResult">
-    <td>{{product.Id}}</td>
-    <td>{{product.productName}}</td>
-    <td>{{product.producttype}}</td>
-    <td><span><i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:green" (click) = "addProduct(product.Id)" ></i></span></td>
+            <tr>
+                <th>Id</th>
+                <th>Product Name</th>
+                <th>Product Type</th>
+                <th>Amount</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let product of productResult">
+                <td>{{product.Id}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.producttype}}</td>
+                <td>{{product.Amount | currency:'INR'}}</td>
+                <td><span><i class="fa fa-plus-circle fa-2x" aria-hidden="true" style="color:green" (click) = "addProduct(product.Id)" ></i></span></td>
 
-  </tr>
+            </tr>
 
 
-</table>
-</div> -->
+        </table>
+    </div>
     <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="productId">
             <th mat-header-cell *matHeaderCellDef> Product Id </th>
@@ -71,23 +64,4 @@
     <div *ngIf="errorFlag">
         <h4><b>No Result Found!</b></h4>
     </div>
-    <h4><b>Selected Product List </b></h4>
-    <table class="table table-striped">
-
-        <tr>
-            <th>Id</th>
-            <th>Product Name</th>
-            <th>Product Type</th>
-            <th>Amount</th>
-        </tr>
-        <tr *ngFor="let product of productdata">
-            <td>{{product.Id}}</td>
-            <td>{{product.productName}}</td>
-            <td>{{product.producttype}}</td>
-            <td>{{product.Amount| currency:'INR'}}</td>
-
-        </tr>
-
-
-    </table>
 </div>

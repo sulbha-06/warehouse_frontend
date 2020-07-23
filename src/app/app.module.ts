@@ -17,6 +17,7 @@ import { FooterPrimaryComponent } from './commonComponents/footerPrimary/footerP
 import { ProductComponent } from './components/components/product/product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+import { BillingComponent } from './components/components/billing/billing.component';
 //import { MatToolbarModule } from '@angular/material/toolbar';
 
 
@@ -35,7 +36,8 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
     LoginComponent,
     HighlightDirective,
     FooterPrimaryComponent,
-    ProductComponent//,
+    ProductComponent,
+    BillingComponent//,
     //MatToolbarModule
   ],
   imports: [
